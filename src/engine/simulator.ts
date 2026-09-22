@@ -65,6 +65,11 @@ export interface SimConfig {
   driftStart?: number;
   /** Feature affected by the fatigue drift. */
   driftFeature?: FeatureKey;
+  /**
+   * Multiplies trial-to-trial motor noise. Used by the evaluation lab to model
+   * learning: a player who has learned is LESS VARIABLE around their own pattern.
+   */
+  noiseScale?: number;
 }
 
 export function generateTrials(cfg: SimConfig): Trial[] {
@@ -76,8 +81,10 @@ export function generateTrials(cfg: SimConfig): Trial[] {
     scenario,
     driftStart = 25,
     driftFeature = "contactForward_cm",
+    noiseScale = 1,
   } = cfg;
   const player = makeSimPlayer(seed, strokeType, level);
+  for (const k of FEATURE_KEYS) player.noise[k] *= noiseScale;
   const rng = mulberry32(seed + 9973);
   const norms = popNorms(strokeType, level);
   const trials: Trial[] = [];
