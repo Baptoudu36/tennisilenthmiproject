@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LabRouteImport } from './routes/lab'
+import { Route as LiveRouteImport } from './routes/live'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ProgressRouteImport } from './routes/progress'
+import { Route as ScienceRouteImport } from './routes/science'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SetupRouteImport } from './routes/setup'
+import { Route as ReportIdRouteImport } from './routes/report.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LabRoute = LabRouteImport.update({
+  id: '/lab',
+  path: '/lab',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveRoute = LiveRouteImport.update({
+  id: '/live',
+  path: '/live',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressRoute = ProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScienceRoute = ScienceRouteImport.update({
+  id: '/science',
+  path: '/science',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SetupRoute = SetupRouteImport.update({
+  id: '/setup',
+  path: '/setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportIdRoute = ReportIdRouteImport.update({
+  id: '/report/$id',
+  path: '/report/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/lab': typeof LabRoute
+  '/live': typeof LiveRoute
+  '/onboarding': typeof OnboardingRoute
+  '/progress': typeof ProgressRoute
+  '/science': typeof ScienceRoute
+  '/settings': typeof SettingsRoute
+  '/setup': typeof SetupRoute
+  '/report/$id': typeof ReportIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/lab': typeof LabRoute
+  '/live': typeof LiveRoute
+  '/onboarding': typeof OnboardingRoute
+  '/progress': typeof ProgressRoute
+  '/science': typeof ScienceRoute
+  '/settings': typeof SettingsRoute
+  '/setup': typeof SetupRoute
+  '/report/$id': typeof ReportIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/lab': typeof LabRoute
+  '/live': typeof LiveRoute
+  '/onboarding': typeof OnboardingRoute
+  '/progress': typeof ProgressRoute
+  '/science': typeof ScienceRoute
+  '/settings': typeof SettingsRoute
+  '/setup': typeof SetupRoute
+  '/report/$id': typeof ReportIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/lab'
+    | '/live'
+    | '/onboarding'
+    | '/progress'
+    | '/science'
+    | '/settings'
+    | '/setup'
+    | '/report/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/lab'
+    | '/live'
+    | '/onboarding'
+    | '/progress'
+    | '/science'
+    | '/settings'
+    | '/setup'
+    | '/report/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/lab'
+    | '/live'
+    | '/onboarding'
+    | '/progress'
+    | '/science'
+    | '/settings'
+    | '/setup'
+    | '/report/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LabRoute: typeof LabRoute
+  LiveRoute: typeof LiveRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ProgressRoute: typeof ProgressRoute
+  ScienceRoute: typeof ScienceRoute
+  SettingsRoute: typeof SettingsRoute
+  SetupRoute: typeof SetupRoute
+  ReportIdRoute: typeof ReportIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab': {
+      id: '/lab'
+      path: '/lab'
+      fullPath: '/lab'
+      preLoaderRoute: typeof LabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live': {
+      id: '/live'
+      path: '/live'
+      fullPath: '/live'
+      preLoaderRoute: typeof LiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress': {
+      id: '/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof ProgressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/science': {
+      id: '/science'
+      path: '/science'
+      fullPath: '/science'
+      preLoaderRoute: typeof ScienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/setup': {
+      id: '/setup'
+      path: '/setup'
+      fullPath: '/setup'
+      preLoaderRoute: typeof SetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report/$id': {
+      id: '/report/$id'
+      path: '/report/$id'
+      fullPath: '/report/$id'
+      preLoaderRoute: typeof ReportIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LabRoute: LabRoute,
+  LiveRoute: LiveRoute,
+  OnboardingRoute: OnboardingRoute,
+  ProgressRoute: ProgressRoute,
+  ScienceRoute: ScienceRoute,
+  SettingsRoute: SettingsRoute,
+  SetupRoute: SetupRoute,
+  ReportIdRoute: ReportIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
