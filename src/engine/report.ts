@@ -174,7 +174,7 @@ export function featureSeries(
   const baseline = buildBaseline(successBefore, session.config.strokeType, session.level, settings);
   const b = baseline.features[key];
   const tau = session.decisions.length
-    ? session.decisions[session.decisions.length - 1].tau
+    ? session.decisions[session.decisions.length - 1]!.tau
     : settings.tauMax;
   return {
     band: { center: b.center, low: b.center - tau * b.scale, high: b.center + tau * b.scale },

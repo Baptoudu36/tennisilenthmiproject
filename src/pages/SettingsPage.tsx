@@ -60,7 +60,7 @@ export function SettingsPage() {
                 min={p.min}
                 max={p.max}
                 step={p.step}
-                onValueChange={([v]) => update(p.key, v)}
+                onValueChange={([v]) => update(p.key, v!)}
               />
             </div>
           ))}

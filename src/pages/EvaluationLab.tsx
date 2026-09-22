@@ -48,7 +48,7 @@ export function EvaluationLab() {
   const combined = (metric: "meanCV" | "successRate") =>
     results
       ? (["acquisition", "retention", "transfer"] as const).map((p) => ({
-          phase: p[0].toUpperCase() + p.slice(1),
+          phase: p[0]!.toUpperCase() + p.slice(1),
           ...Object.fromEntries(
             results
               .filter((r) => r.phase === p)

@@ -4,7 +4,8 @@ import { Line, LineChart, ResponsiveContainer, YAxis } from "recharts";
 import { Button } from "@/components/ui/button";
 import { OUTCOME_LABELS } from "@/engine/decision";
 import { FEATURES } from "@/engine/features";
-import type { Session, TrialPhase } from "@/engine/types";
+import type { Session } from "@/engine/types";
+import type { TrialPhase } from "@/engine/decision";
 import { buildSession } from "@/lib/build-session";
 import { cn } from "@/lib/utils";
 import { useProfileStore } from "@/store/profile";
@@ -85,7 +86,7 @@ export function LiveSession() {
           setPhase("READY");
         }
       }
-    }, PHASE_MS[phase] / speed);
+    }, PHASE_MS[phase]! / speed);
     return () => clearTimeout(timer);
   }, [running, phase, idx, speed, session, finished, finish]);
 
