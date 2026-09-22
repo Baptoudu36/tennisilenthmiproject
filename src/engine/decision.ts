@@ -94,8 +94,7 @@ export function runEngine(input: EngineInput): EngineResult {
   const successful = [...priorSuccessful];
   const decisions: Decision[] = [];
   /** Rolling history of flags per feature: +1 / -1 / 0 per trial. */
-  const flagHistory: FeatureKey extends never ? never : Record<FeatureKey, number[]> =
-    {} as Record<FeatureKey, number[]>;
+  const flagHistory = {} as Record<FeatureKey, number[]>;
   for (const k of FEATURE_KEYS) flagHistory[k] = [];
 
   let pulsesUsed = 0;
