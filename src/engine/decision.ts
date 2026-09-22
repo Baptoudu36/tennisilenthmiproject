@@ -141,11 +141,9 @@ export function runEngine(input: EngineInput): EngineResult {
       isFirstSession && trial.index < settings.calibrationTrials;
 
     if (condition === "none") {
+      // Control condition (also used for retention/transfer tests).
       outcome = flagged.length ? "SUPPRESSED_BUDGET" : "SILENT_NO_DEVIATION";
-      reason =
-        condition === "none"
-          ? "Control condition: no feedback is ever delivered."
-          : reason!;
+      reason = "No-feedback condition: the engine observes but never pulses.";
     } else if (inCalibration) {
       outcome = "SUPPRESSED_CALIBRATION";
       reason = `Calibration phase (trial ${trial.index + 1}/${settings.calibrationTrials}): observing only, no reference is trustworthy yet.`;
