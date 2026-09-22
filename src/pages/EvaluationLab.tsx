@@ -44,19 +44,6 @@ export function EvaluationLab() {
       }),
     );
 
-  const chartData = (phase: PhaseResult["phase"], metric: "meanCV" | "successRate") =>
-    results
-      ? [
-          {
-            phase,
-            ...Object.fromEntries(
-              results
-                .filter((r) => r.phase === phase)
-                .map((r) => [CONDITION_LABELS[r.condition], Number(r[metric].toFixed(2))]),
-            ),
-          },
-        ]
-      : [];
 
   const combined = (metric: "meanCV" | "successRate") =>
     results
