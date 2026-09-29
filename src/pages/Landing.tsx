@@ -69,7 +69,7 @@ export function Landing() {
 
         <div className="mt-20 grid gap-4 sm:grid-cols-3">
           {[
-            ["Individual baseline", "Your reference is your own successful strokes, not a textbook ideal."],
+            ["Individual baseline", "Your reference will be your own strokes, nothing else."],
             ["Persistence rule", "A deviation must repeat in 3 of the last 5 strokes to count."],
             ["Feedback budget", "A few pulses per session, fading as you progress."],
           ].map(([t, d]) => (
