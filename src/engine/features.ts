@@ -37,7 +37,7 @@ export const FEATURES: FeatureDef[] = [
   },
   {
     key: "stanceWidth_cm",
-    label: "Stance width",
+    label: "Foot spacing",
     unit: "cm",
     meaning: "Base of support at the moment of the stroke.",
   },
