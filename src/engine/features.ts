@@ -19,7 +19,7 @@ export const FEATURES: FeatureDef[] = [
   },
   {
     key: "contactForward_cm",
-    label: "Contact point (forward)",
+    label: "Contact point location",
     unit: "cm",
     meaning: "How far ahead of the front foot the ball is struck.",
   },
