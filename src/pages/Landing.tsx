@@ -27,7 +27,7 @@ export function Landing() {
 
         <div className="mt-10 max-w-2xl space-y-3 text-base text-muted-foreground">
           <p>
-            The system watches every stroke but says almost nothing: silence is the
+            The system watches every stroke but says almost nothing : silence is the
             default state, not a failure to detect.
           </p>
           <p>
