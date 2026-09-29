@@ -127,7 +127,7 @@ export function ProgressPage() {
         <table className="w-full text-sm">
           <thead className="text-left text-xs uppercase tracking-wide text-muted-foreground">
             <tr>
-              {["Session", "Mean CV", "Success", "Budget", "Pulses", "Baseline center", "w", ""].map(
+              {["Session", "Mean CV", "Success", "FEEDBACK", "Pulses", "Baseline center", "w", ""].map(
                 (h) => (
                   <th key={h} className="px-4 py-3 font-medium">
                     {h}
